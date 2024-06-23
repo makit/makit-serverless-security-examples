@@ -1,0 +1,20 @@
+{
+    "Version": "1.0",
+    "Auth": {
+        "Cognito": {
+            "userPoolClientId": "3celrfr36h5u8qlgjarhnh8n2l",
+            "userPoolId": "eu-west-1_oaowMTpzX",
+            "loginWith" : {
+                "email": true
+            },
+            "mandatorySignIn": true
+        }
+    },
+    "API": {
+      "REST": {
+        "profile-api": {
+          "endpoint": "https://itcnfv22f6.execute-api.eu-west-1.amazonaws.com/prod/"
+        }
+      }
+    }
+  }
