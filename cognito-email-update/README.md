@@ -14,7 +14,7 @@ Once logged in as "bob@fakeemail.com" then bob can use the AWS CLI to hit [Cogni
 But this will fail due to the fact the email already exists:
 `An error occurred (AliasExistsException) when calling the UpdateUserAttributes operation: An account with the given email already exists.`
 
-But do it again with a different capitalisation, such as GARY@fakeemail.com and Cognito will allow it, but send an email for verifification. If the user logs out and back in now then the database lookup will occur for bob@makit.net and pull back his personal data.
+But do it again with a different capitalisation, such as GARY@fakeemail.com and Cognito will allow it, but send an email for verification. If the user logs out and back in now then the database lookup will occur for bob@makit.net and pull back his personal data.
 
 ## Protection
 * If using the email address as a lookup then ensure its verified first (email_verified). Ideally block login, only allow them to progress once verified.
