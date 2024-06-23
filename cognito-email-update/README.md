@@ -7,7 +7,17 @@ The web application allows creating and logging in of accounts against this Cogn
 The database lookup is performed on the unique email address, which is also the username for logging in.
 
 ### Taking advantage
-Once logged in as "bob" then bob can use the AWS CLI to hit Cognito directly to update his own email address:
+Once logged in as "bob@fakeemail.com" then bob can use the AWS CLI to hit [Cognito directly](https://docs.aws.amazon.com/cli/latest/reference/cognito-idp/update-user-attributes.html) to update their own email address to another users for example:
 
-`aws cognito-idp update-user-attributes --access-token ACCESS-TOKEN --user-attributes
-Name="email", Value="anotheremail@address.com"`
+`aws cognito-idp update-user-attributes --access-token ACCESS-TOKEN --user-attributes Name="email",Value="gary@fakeemail.com"`
+
+But this will fail due to the fact the email already exists:
+`An error occurred (AliasExistsException) when calling the UpdateUserAttributes operation: An account with the given email already exists.`
+
+But do it again with a different capitalisation, such as GARY@fakeemail.com and Cognito will allow it, but send an email for verifification. If the user logs out and back in now then the database lookup will occur for bob@makit.net and pull back his personal data.
+
+## Protection
+* If using the email address as a lookup then ensure its verified first (email_verified). Ideally block login, only allow them to progress once verified.
+* Use the "Keep original attribute value active when an update is pending" option. In CDK this is: `keepOriginal: { email: true }
+* Use an ID for lookups, not the email address if it can change
+* Turn off case sensitivity with email addresses: `signInCaseSensitive: false`

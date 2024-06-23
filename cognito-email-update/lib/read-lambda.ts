@@ -15,6 +15,7 @@ const dynamoDbClient = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(dynamoDbClient);
 
 exports.handler = async (event: Event) => {
+    console.log('Received event:', JSON.stringify(event, null, 2));
     const email: string = event.requestContext.authorizer.claims.email;
 
     const params = {

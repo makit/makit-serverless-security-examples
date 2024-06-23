@@ -25,6 +25,10 @@ export class CognitoEmailUpdateStack extends cdk.Stack {
       autoVerify: { email: true }, // Automatically verify emails
       signInAliases: { email: true }, // Use email as the sign in alias
       removalPolicy: cdk.RemovalPolicy.DESTROY, // Remove the user pool if the stack is deleted
+      // keepOriginal: {
+      //   email: true,
+      // }
+      // signInCaseSensitive: false,
     });
 
     const userPoolClient = new cognito.UserPoolClient(this, 'SiteAppClient', {
