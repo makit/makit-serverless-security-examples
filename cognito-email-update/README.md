@@ -16,6 +16,8 @@ But this will fail due to the fact the email already exists:
 
 But do it again with a different capitalisation, such as GARY@fakeemail.com and Cognito will allow it, but send an email for verification. If the user logs out and back in now then the database lookup will occur for gary@fakeemail.com and pull back his personal data.
 
+This exact issue happened to [flickr](https://www.flickr.com/), and its worth having a read at the report: [https://hackerone.com/reports/1342088](https://hackerone.com/reports/1342088).
+
 ## Protection
 * If using the email address as a lookup then ensure its verified first (email_verified). Ideally block login, only allow them to progress once verified.
 * Use the "Keep original attribute value active when an update is pending" option. In CDK this is: `keepOriginal: { email: true }
