@@ -21,3 +21,18 @@ But do it again with a different capitalisation, such as GARY@fakeemail.com and 
 * Use the "Keep original attribute value active when an update is pending" option. In CDK this is: `keepOriginal: { email: true }
 * Use an ID for lookups, not the email address if it can change
 * Turn off case sensitivity with email addresses: `signInCaseSensitive: false`
+
+## Example Code
+The example code base is a CDK application with a React frontend. Consists of:
+* Cognito Userpool
+* API Gateway
+* S3 bucket set as public and website hosting enabled
+* The built React frontend deployed to the bucket
+
+### Setting up
+1. Run `npm install` in the root folder, and under `web`
+2. Run `npm run build` in the web folder to build the web application.
+3. Run `cdk deploy` in the root folder.
+4. Update `cognito-email-update\web\src\amplifyconfiguration.json` with the correct details from the output of the CDK deploy, needs the user pool details and API gateway URL.
+5. Run `npm run build` in the web folder to build the web application again.
+6. Run `cdk deploy` in the root folder again to deploy the updated website.
