@@ -33,6 +33,6 @@ The example code base is a CDK application with a React frontend. Consists of:
 1. Run `npm install` in the root folder, and under `web`
 2. Run `npm run build` in the web folder to build the web application.
 3. Run `cdk deploy` in the root folder.
-4. Update `cognito-email-update\web\src\amplifyconfiguration.json` with the correct details from the output of the CDK deploy, needs the user pool details and API gateway URL.
+4. Update `web\src\amplifyconfiguration.json` with the correct details from the output of the CDK deploy, needs the user pool details and API gateway URL.
 5. Run `npm run build` in the web folder to build the web application again.
 6. Run `cdk deploy` in the root folder again to deploy the updated website.

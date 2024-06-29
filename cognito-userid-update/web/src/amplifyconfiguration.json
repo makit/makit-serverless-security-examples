@@ -2,8 +2,8 @@
     "Version": "1.0",
     "Auth": {
         "Cognito": {
-            "userPoolClientId": "7ot7eofg5pthr31dlhj52hms1c",
-            "userPoolId": "eu-west-1_KoNXE1fa1",
+            "userPoolClientId": "FILL_IN",
+            "userPoolId": "FILL_IN",
             "loginWith" : {
                 "email": true
             },
@@ -13,7 +13,7 @@
     "API": {
       "REST": {
         "profile-api": {
-          "endpoint": "https://b6fjbygnyf.execute-api.eu-west-1.amazonaws.com/prod/"
+          "endpoint": "https://FILL_IN.execute-api.FILL_IN.amazonaws.com/prod/"
         }
       }
     }

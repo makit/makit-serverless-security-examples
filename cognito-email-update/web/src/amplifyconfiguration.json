@@ -13,7 +13,7 @@
     "API": {
       "REST": {
         "profile-api": {
-          "endpoint": "https://FILL_IN.execute-api.eu-west-1.amazonaws.com/prod/"
+          "endpoint": "https://FILL_IN.execute-api.FILL_IN.amazonaws.com/prod/"
         }
       }
     }
