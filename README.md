@@ -1,4 +1,4 @@
-# makit-serverless-security-examples
+# AWS Serverless Security Examples
 This repo contains examples of security issues I have come across in applications using AWS serverless architectures. I will add to it as I come across more in my travels. Each example has a simple application demonstrating the specific problem, along with a README that details the issues and how to prevent it.
 
 ## Cognito
